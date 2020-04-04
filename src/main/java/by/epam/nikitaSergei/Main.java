@@ -1,8 +1,8 @@
 package by.epam.nikitaSergei;
 
 import by.epam.nikitaSergei.entity.Text;
-import by.epam.nikitaSergei.entity.textElements.Sentence;
-import by.epam.nikitaSergei.services.TextParser;
+import by.epam.nikitaSergei.services.TextFileReader;
+import by.epam.nikitaSergei.services.TextPrinter;
 import by.epam.nikitaSergei.services.TextService;
 
 public class Main {
@@ -10,12 +10,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        TextParser textParser = new TextParser();
+        TextFileReader textParser = new TextFileReader();
         Text text1 = new Text(textParser.getTestText(pathToTextFile));
+        TextPrinter textPrinter = new TextPrinter();
+        textPrinter.printText(text1);
         TextService textService = new TextService();
         textService.sortSentencesByWordCount(text1);
-
 
     }
 }

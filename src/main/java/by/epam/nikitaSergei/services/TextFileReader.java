@@ -1,14 +1,14 @@
 package by.epam.nikitaSergei.services;
 
-import by.epam.nikitaSergei.interfaces.Parser;
+import by.epam.nikitaSergei.interfaces.TextReader;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class TextParser implements Parser {
-    private static final Logger logger = Logger.getLogger(TextParser.class);
+public class TextFileReader implements TextReader {
+    private static final Logger logger = Logger.getLogger(TextFileReader.class);
 
     @Override
     public String getTestText(String path) {

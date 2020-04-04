@@ -10,11 +10,10 @@ public class TextService implements FormatService {
 
     @Override
     public void sortSentencesByWordCount(Text text) {
-        text.getSentences().sort(Comparator.comparingInt(Sentence::getWordCount));
-
+        text.getParagraphs().forEach(paragraph -> paragraph.getSentences().sort(Comparator.comparingInt(Sentence::getWordCount)));
     }
 
     public void returnBaseSequence(Text text) {
-        text.getSentences().sort((sent1, sent2) -> (int) (sent1.getId() - sent2.getId()));
+        text.getParagraphs().forEach(paragraph -> paragraph.getSentences().sort((sent1, sent2) -> (int) (sent1.getId() - sent2.getId())));
     }
 }

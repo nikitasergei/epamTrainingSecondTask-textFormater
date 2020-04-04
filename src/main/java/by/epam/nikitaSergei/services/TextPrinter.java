@@ -3,18 +3,17 @@ package by.epam.nikitaSergei.services;
 import by.epam.nikitaSergei.entity.Text;
 import by.epam.nikitaSergei.interfaces.Printer;
 
-import java.awt.print.Printable;
-
-public class TextPrinter implements Printer{
+public class TextPrinter implements Printer {
 
     @Override
     public void printText(Text text) {
-        text.getSentences().forEach(System.out::println);
+        text.getParagraphs().forEach(paragraph -> System.out.print(paragraph + " "));
     }
 
     @Override
     public void printTextWithWordCount(Text text) {
-        text.getSentences().forEach(sentence -> System.out.println(sentence + " - " + sentence.getWordCount()));
+        text.getParagraphs().forEach(paragraph -> paragraph.getSentences()
+                .forEach(sentence -> System.out.println(sentence + " - " + sentence.getWordCount())));
     }
 
     @Override
