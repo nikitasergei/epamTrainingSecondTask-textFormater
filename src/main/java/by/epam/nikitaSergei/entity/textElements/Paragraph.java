@@ -1,22 +1,18 @@
 package by.epam.nikitaSergei.entity.textElements;
 
-import org.apache.commons.lang3.StringUtils;
+import by.epam.nikitaSergei.services.implementation.StringParser;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Paragraph {
+    private static Logger LOGGER = Logger.getLogger(Paragraph.class);
     private List<Sentence> sentences = new ArrayList<>();
 
     public Paragraph(String paragraph) {
-        if (paragraph.charAt(0) == '\uFEFF')
-            paragraph = paragraph.replace(paragraph.charAt(0), ' ').trim();
-        while (paragraph.length() > 0) {
-            int index = StringUtils.indexOfAny(paragraph, ".", "!", "?");
-            String substring = paragraph.substring(0, index + 1);
-            this.sentences.add(new Sentence(substring));
-            paragraph = paragraph.replace(substring, "").trim();
-        }
+        this.sentences = StringParser.parseParagraph(paragraph);
+        LOGGER.info("Paragraph is parsed");
     }
 
     public List<Sentence> getSentences() {

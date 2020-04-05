@@ -1,7 +1,7 @@
-package by.epam.nikitaSergei.services;
+package by.epam.nikitaSergei.services.implementation;
 
 import by.epam.nikitaSergei.entity.Text;
-import by.epam.nikitaSergei.interfaces.Printer;
+import by.epam.nikitaSergei.services.Printer;
 
 public class TextPrinter implements Printer {
 

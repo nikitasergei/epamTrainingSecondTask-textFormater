@@ -1,4 +1,4 @@
-package by.epam.nikitaSergei.interfaces;
+package by.epam.nikitaSergei.services;
 
 /**
  * A class implements the <code>SentenceConsistable</code> interface

@@ -2,7 +2,8 @@ package by.epam.nikitaSergei.entity.textElements;
 
 import by.epam.nikitaSergei.entity.textElements.sentenceElements.PunctuationMark;
 import by.epam.nikitaSergei.entity.textElements.sentenceElements.Word;
-import by.epam.nikitaSergei.interfaces.SentenceConsistable;
+import by.epam.nikitaSergei.services.SentenceConsistable;
+import by.epam.nikitaSergei.services.implementation.StringParser;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -19,27 +20,7 @@ public class Sentence {
         if (sentence.substring(sentence.length() - 1).matches("[.!?]")) {
             this.id = countId;
             countId++;
-            int iterator = 0;
-            while (sentence.length() > 0) {
-                char symbol = sentence.charAt(iterator);
-                if (Character.isLetterOrDigit(symbol) || symbol == '\'') {              //if letter or digit and word is NOT complete
-                    iterator++;
-                } else if (Character.isWhitespace(symbol)) {                            //if whiteSpace
-                    String substring = sentence.substring(0, iterator);
-                    this.sentenceElements.add(new Word(substring));
-                    sentence = sentence.substring(iterator).trim();
-                    iterator = 0;
-                } else if (iterator == 0) {                                              //if punctuation mark
-                    this.sentenceElements.add(new PunctuationMark(symbol));
-                    sentence = sentence.substring(1).trim();
-                    iterator = 0;
-                } else {                                                                 //if letter or digit and word is complete
-                    String substring = sentence.substring(0, iterator);
-                    this.sentenceElements.add(new Word(substring));
-                    sentence = sentence.replace(substring, " ").trim();
-                    iterator = 0;
-                }
-            }
+            this.sentenceElements = StringParser.parseSentence(sentence);
             logger.info("New sentence created");
         } else throw new IllegalArgumentException();
     }

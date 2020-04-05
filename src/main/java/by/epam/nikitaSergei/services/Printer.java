@@ -1,4 +1,4 @@
-package by.epam.nikitaSergei.interfaces;
+package by.epam.nikitaSergei.services;
 
 import by.epam.nikitaSergei.entity.Text;
 

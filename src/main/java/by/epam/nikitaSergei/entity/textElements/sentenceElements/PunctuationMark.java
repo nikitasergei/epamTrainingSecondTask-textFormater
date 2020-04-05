@@ -1,6 +1,6 @@
 package by.epam.nikitaSergei.entity.textElements.sentenceElements;
 
-import by.epam.nikitaSergei.interfaces.SentenceConsistable;
+import by.epam.nikitaSergei.services.SentenceConsistable;
 import org.apache.log4j.Logger;
 
 public class PunctuationMark implements SentenceConsistable {

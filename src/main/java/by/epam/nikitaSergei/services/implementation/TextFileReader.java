@@ -1,6 +1,6 @@
-package by.epam.nikitaSergei.services;
+package by.epam.nikitaSergei.services.implementation;
 
-import by.epam.nikitaSergei.interfaces.TextReader;
+import by.epam.nikitaSergei.services.TextReader;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;

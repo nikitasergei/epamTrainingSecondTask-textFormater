@@ -2,13 +2,15 @@ package by.epam.nikitaSergei.services;
 
 import by.epam.nikitaSergei.entity.Text;
 import by.epam.nikitaSergei.entity.textElements.Sentence;
+import by.epam.nikitaSergei.services.implementation.TextFileReader;
+import by.epam.nikitaSergei.services.implementation.TextService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TextServiceTest {
     private TextFileReader textParser = new TextFileReader();
     private TextService textService = new TextService();
-    private String path = "C:/javaProjects/epamTraining/secondHomeTask/src/main/resources/DOC.txt";
+    private String path = "C:/Users/User/Desktop/epamTrainingSecondTask-textFormater/src/main/resources/DOC.txt";
     private Text text = new Text(textParser.getTestText(path));
 
     @Test

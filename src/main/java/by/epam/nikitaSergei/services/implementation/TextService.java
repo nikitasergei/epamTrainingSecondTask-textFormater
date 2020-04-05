@@ -1,8 +1,8 @@
-package by.epam.nikitaSergei.services;
+package by.epam.nikitaSergei.services.implementation;
 
 import by.epam.nikitaSergei.entity.Text;
 import by.epam.nikitaSergei.entity.textElements.Sentence;
-import by.epam.nikitaSergei.interfaces.FormatService;
+import by.epam.nikitaSergei.services.FormatService;
 
 import java.util.Comparator;
 

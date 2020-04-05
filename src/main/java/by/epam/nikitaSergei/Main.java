@@ -1,9 +1,9 @@
 package by.epam.nikitaSergei;
 
 import by.epam.nikitaSergei.entity.Text;
-import by.epam.nikitaSergei.services.TextFileReader;
-import by.epam.nikitaSergei.services.TextPrinter;
-import by.epam.nikitaSergei.services.TextService;
+import by.epam.nikitaSergei.services.implementation.TextFileReader;
+import by.epam.nikitaSergei.services.implementation.TextPrinter;
+import by.epam.nikitaSergei.services.implementation.TextService;
 
 public class Main {
     private static String pathToTextFile = "C:/javaProjects/epamTraining/secondHomeTask/src/main/resources/DOC.txt";
